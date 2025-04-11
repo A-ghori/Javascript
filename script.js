@@ -272,17 +272,144 @@
 
 
 
-        function printFarmInventory(cows, chickens) {
-            let cowString = String(cows);
-            while (cowString.length < 3) {
-            cowString = "0" + cowString;
-            }
-            console.log(`${cowString} Cows`);
-            let chickenString = String(chickens);
-            while (chickenString.length < 3) {
-            chickenString = "0" + chickenString;
-            }
-            console.log(`${chickenString} Chickens`);
+        // function printFarmInventory(cows, chickens) {
+        //     let cowString = String(cows);
+        //     while (cowString.length < 3) {
+        //     cowString = "0" + cowString;
+        //     }
+        //     console.log(`${cowString} Cows`);
+        //     let chickenString = String(chickens);
+        //     while (chickenString.length < 3) {
+        //     chickenString = "0" + chickenString;
+        //     }
+        //     console.log(`${chickenString} Chickens`);
             
-            }
-            printFarmInventory(7, 11);
+        //     }
+        //     printFarmInventory(7, 11);
+
+// Arrow Functions some basic problems
+const multiply = (a,b) => a * b; 
+console.log(multiply(2, 3));
+
+const add = (a,b) => {  return a + b }
+console.log(add(2,3));
+
+let person1 = {
+        name : "Shubhayu",
+        greet: function() {
+                console.log("Hello" + this.name)
+        }
+}
+let person = {
+        name: "Shubhayu",
+        greet: () => console.log("Hello " + person.name)
+    };
+    person.greet();
+
+    function Person(name){
+        this.name = name;
+        this.sayName = () => console.log(this.name);
+    }
+    const person9 = new Person("Shubhayu Barua")
+    person9.sayName()
+
+const fruits = ["apple", "banana", "cherry"];
+console.log(fruits)
+
+const cities = ["Delhi", "Mumbai", "Kolkata"];
+cities.push("Chennai");
+cities[1]="Bangalore"
+console.log(cities)
+//Mumbai ommit due to array element using their index
+// Here, an array named cities is created with three string elements: "Delhi", "Mumbai", and "Kolkata".
+
+// Even though the array is declared with const, this only means you can't reassign the variable cities to another array; however, you can still change the individual elements inside the array.
+
+const numbers = [1,2,3];        
+// Add 3rd element
+numbers.push (4);
+// //Pop Last element
+numbers.pop()
+// //Remove first element
+numbers.shift(2)
+delete numbers[2]//The delete operator removes the element but leaves an empty slot (or undefined) in its place, which is usually not desired. Therefore, splice() is preferred for completely removing an element from the array.
+console.log(numbers)
+
+let numbers2 = [9, 8, 7];
+
+numbers2.splice(1, 1);  // At index 1, remove 1 element
+console.log(numbers2);  // Output: [9, 7]
+
+const animals = ["Dogs","Cat","Elephant"];
+
+for(let i=0; i<animals.length;i++){
+        console.log(animals[i])
+}
+
+const numbers3 = [1, 2, 3, 4, 5, 6];
+
+const evenNumbers3 = numbers3.filter(num => num % 2 === 0);
+
+console.log(evenNumbers3);  // Output: [2, 4, 6]
+
+
+const PriceinDollar = [10,20,30,40,50]
+const PriceinRupess = PriceinDollar.map(price => price*83)
+for(let i=0; i<PriceinRupess.length;i++){
+console.log(PriceinRupess[i]); // Output: [830, 1660, 2490, 3320, 4150]
+}
+
+//Sort 
+const numbers6 = [900,10,1000,200,5000,71000,14741000,44100,2,90000]
+numbers6.sort((a,b)=> b-a)
+console.log(numbers6)
+
+const matrix = [
+        [1, 2, 3],  // Row 0
+        [4, 5, 6],  // Row 1
+        [7, 8, 9]   // Row 2
+    ];
+    
+    console.log(matrix[1][0]);  // Output: 4  (Row 1, Column 0) intersection jetate hbe setai likhbo 
+    const column2 = matrix.map(row => row[1])
+    console.log(column2)
+    
+
+//common number detection
+
+const numbers7 = [1,2,3,2,4,5,66,66,78,3,9]
+const UniqueNumbers = [...new Set(numbers7)];//new Set(numbers) is responsible for detecting and removing duplicate numbers.
+console.log(UniqueNumbers);
+    
+const cube = [
+
+        [  //layer 0
+                [1,2,3],
+                [4,5,6],
+                [7,8,9]
+        ],
+        [  //layer 1
+                [10,11,12],
+                [13,14,15],
+                [16,17,18]
+        ]
+];
+    for (let layer =0; layer<cube.length; layer++){
+        console.log(`Layer ${layer}:`);
+        for (let row = 0; row<cube[layer].length; row++){
+           for(let column=0;column<cube[layer][row].length; column++){
+                console.log(`cube[${layer}] = ${cube[layer][row][column]}`)
+           }
+        }
+    }
+    const grid = [
+        [10,20,30],
+        [40,50,60],
+        [70,80,90]
+    ];
+    for(let row=0; row<grid.length;row++)
+        {
+                for(let column=0;column<grid[row].length; column++)
+
+                        console.log(`grid[${row}][${column}]=${grid[row][column]}`)
+        }

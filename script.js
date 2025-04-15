@@ -600,3 +600,49 @@ const entries = nums1.entries();
 for (const [index, value] of entries) {
   console.log(`entries: index=${index}, value=${value}`);
 }
+
+//CLASS
+class person{
+        constructor(name,age){
+                this.name = name;
+                this.age = age;
+        }
+        
+        greet(){
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+
+        }
+}
+const name = prompt("Enter your name")
+const age = prompt("Enter your age")
+const person1 = new person ( name , age)
+person1.greet();
+
+class Calculator {
+        add(a, b) {
+          return a + b;
+        }
+      
+        subtract(a, b) {
+          return a - b;
+        }
+      
+      Multiply (a,b){
+        return a*b;
+      }
+      Divide (a,b){
+        return a/b;
+      }
+}
+      // Create an instance of Calculator
+      const calc = new Calculator();
+      
+      // Take input from the user
+      const num1 = parseFloat(prompt("Enter the first number:"));
+      const num2 = parseFloat(prompt("Enter the second number:"));
+      
+      // Call methods and show result
+      console.log("Addition:", calc.add(num1, num2));
+      console.log("Subtraction:", calc.subtract(num1, num2));
+      console.log("Multiply:", calc.Multiply(num1, num2));
+      console.log("Dividation:", calc.Divide(num1, num2));

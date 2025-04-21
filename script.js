@@ -485,164 +485,333 @@
 // }
 
 //For Each
-const nums1 = [1,2.,3];
-nums1.forEach(num=> console.log("forEach",num))
-//Output become
-//forEach 1
-//forEach 2
- //forEach 3
+// const nums1 = [1,2.,3];
+// nums1.forEach(num=> console.log("forEach",num))
+// //Output become
+// //forEach 1
+// //forEach 2
+//  //forEach 3
 
- //Filters
- const evens = nums1.filter(num => num % 2 === 0);
- console.log("filters",evens);
- ////Output become 
- //filters [2]
+//  //Filters
+//  const evens = nums1.filter(num => num % 2 === 0);
+//  console.log("filters",evens);
+//  ////Output become 
+//  //filters [2]
 
- //Reduce
-const sum = nums1.reduce((acc,curr)=> acc+curr,0)
-console.log("reduce",sum);
-//reduceRight
-const reserveSum = nums1.reduceRight((acc,curr)=> acc+curr,0)
-console.log("reduceRight:",reserveSum)
+//  //Reduce
+// const sum = nums1.reduce((acc,curr)=> acc+curr,0)
+// console.log("reduce",sum);
+// //reduceRight
+// const reserveSum = nums1.reduceRight((acc,curr)=> acc+curr,0)
+// console.log("reduceRight:",reserveSum)
 
-//Flat
-const nested1 = [1, [2,3], [4,5,[6]]]
-console.log("flat:", nested1.flat(2))
-//Output: flat: (6) [1, 2, 3, 4, 5, 6]
+// //Flat
+// const nested1 = [1, [2,3], [4,5,[6]]]
+// console.log("flat:", nested1.flat(2))
+// //Output: flat: (6) [1, 2, 3, 4, 5, 6]
 
-//FlatMap
-const flatMapped = nums1.flatMap(num => [num,num*2]);
-console.log("FLatMapped:",flatMapped)
+// //FlatMap
+// const flatMapped = nums1.flatMap(num => [num,num*2]);
+// console.log("FLatMapped:",flatMapped)
 
-//SEARCHING AND TESTING
-//FIND
-const found = nums1.find(num => num >1)
-console.log("Find:",found)
+// //SEARCHING AND TESTING
+// //FIND
+// const found = nums1.find(num => num >1)
+// console.log("Find:",found)
 
-//FINDINDEX
-const foundIndex = nums1.findIndex(num => num>1)
-console.log("FindIndex:",foundIndex) // Findindex mean array er index search korche eta jeta 2 hbe seta 1 index ke show korche 
+// //FINDINDEX
+// const foundIndex = nums1.findIndex(num => num>1)
+// console.log("FindIndex:",foundIndex) // Findindex mean array er index search korche eta jeta 2 hbe seta 1 index ke show korche 
 
-//IndexOf
-const names = ["A","B","C"]
-console.log("indexof:",names.indexOf("B")) //indexof: 1
+// //IndexOf
+// const names = ["A","B","C"]
+// console.log("indexof:",names.indexOf("B")) //indexof: 1
 
-//LastIndexOf
-const nums2 = [1,2,3,2];
-console.log("lastIndexof:",nums2.lastIndexOf(2)) //3
+// //LastIndexOf
+// const nums2 = [1,2,3,2];
+// console.log("lastIndexof:",nums2.lastIndexOf(2)) //3
 
-//Includes
-console.log("includes:",nums2.includes(3)) //includes: true
+// //Includes
+// console.log("includes:",nums2.includes(3)) //includes: true
 
-//Every
-console.log("Every:",  nums2.every(num => num>0));
+// //Every
+// console.log("Every:",  nums2.every(num => num>0));
 
-//Some
-console.log("Some:",nums1.some(num => num > 2))
+// //Some
+// console.log("Some:",nums1.some(num => num > 2))
 
-//MODIFYING AND COPYING
+// //MODIFYING AND COPYING
 
-//push
-nums1.push(4)
-console.log("Push:",nums1); //Push: (4) [1, 2, 3, 4]
+// //push
+// nums1.push(4)
+// console.log("Push:",nums1); //Push: (4) [1, 2, 3, 4]
 
-//POP
-nums1.pop();
-console.log("pop:",nums1);
+// //POP
+// nums1.pop();
+// console.log("pop:",nums1);
 
-//SHIFT
-nums1.shift()
-console.log("Shift:",nums1)
+// //SHIFT
+// nums1.shift()
+// console.log("Shift:",nums1)
 
-//Unshift
-nums1.unshift();
-console.log("Unshift:",nums1)
+// //Unshift
+// nums1.unshift();
+// console.log("Unshift:",nums1)
 
-// slice
-const sliced = nums1.slice(1,3);
-console.log("slice:", sliced);
+// // slice
+// const sliced = nums1.slice(1,3);
+// console.log("slice:", sliced);
 
-//CopyWithin
-const copyTest = [1,2,3,4,5,6];
-copyTest.copyWithin(0,3);
-console.log("CopyWithin:",copyTest)
+// //CopyWithin
+// const copyTest = [1,2,3,4,5,6];
+// copyTest.copyWithin(0,3);
+// console.log("CopyWithin:",copyTest)
 
-//Fill
-const filled = new Array(5).fill(7);
-console.log("FIll:",filled);
+// //Fill
+// const filled = new Array(5).fill(7);
+// console.log("FIll:",filled);
 
-// Utilities
+// // Utilities
 
-// concat
-const combined = nums1.concat([6, 7]);
-console.log("concat:", combined);
+// // concat
+// const combined = nums1.concat([6, 7]);
+// console.log("concat:", combined);
 
-// join
-console.log("join:", nums1.join("-"));
+// // join
+// console.log("join:", nums1.join("-"));
 
-// reverse
-nums1.reverse();
-console.log("reverse:", nums1);
+// // reverse
+// nums1.reverse();
+// console.log("reverse:", nums1);
 
 
-// sort
-nums1.sort((a, b) => a - b);
-console.log("sort:", nums1);
+// // sort
+// nums1.sort((a, b) => a - b);
+// console.log("sort:", nums1);
 
-// toString
-console.log("toString:", nums1.toString());
+// // toString
+// console.log("toString:", nums1.toString());
 
-// valueOf
-console.log("valueOf:", nums1.valueOf());
+// // valueOf
+// console.log("valueOf:", nums1.valueOf());
 
 // entries
-const entries = nums1.entries();
-for (const [index, value] of entries) {
-  console.log(`entries: index=${index}, value=${value}`);
-}
+// const entries = nums1.entries();
+// for (const [index, value] of entries) {
+//   console.log(`entries: index=${index}, value=${value}`);
+// }
 
-//CLASS
-class person{
-        constructor(name,age){
-                this.name = name;
-                this.age = age;
-        }
+// //CLASS
+// class person{
+//         constructor(name,age){
+//                 this.name = name;
+//                 this.age = age;
+//         }
         
-        greet(){
-                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+//         greet(){
+//                 console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
 
-        }
-}
-const name = prompt("Enter your name")
-const age = prompt("Enter your age")
-const person1 = new person ( name , age)
-person1.greet();
+//         }
+// }
+// const name = prompt("Enter your name")
+// const age = prompt("Enter your age")
+// const person1 = new person ( name , age)
+// person1.greet();
 
-class Calculator {
-        add(a, b) {
-          return a + b;
-        }
+
+// Calculator Class
+// class Calculator {
+//         add(a, b) {
+//           return a + b;
+//         }
       
-        subtract(a, b) {
-          return a - b;
-        }
+//         subtract(a, b) {
+//           return a - b;
+//         }
       
-      Multiply (a,b){
-        return a*b;
-      }
-      Divide (a,b){
-        return a/b;
-      }
-}
+//       Multiply (a,b){
+//         return a*b;
+//       }
+//       Divide (a,b){
+//         return a/b;
+//       }
+// }
       // Create an instance of Calculator
-      const calc = new Calculator();
+//       const calc = new Calculator();
       
       // Take input from the user
-      const num1 = parseFloat(prompt("Enter the first number:"));
-      const num2 = parseFloat(prompt("Enter the second number:"));
+//       const num1 = parseFloat(prompt("Enter the first number:"));
+//       const num2 = parseFloat(prompt("Enter the second number:"));
       
       // Call methods and show result
-      console.log("Addition:", calc.add(num1, num2));
-      console.log("Subtraction:", calc.subtract(num1, num2));
-      console.log("Multiply:", calc.Multiply(num1, num2));
-      console.log("Dividation:", calc.Divide(num1, num2));
+//       console.log("Addition:", calc.add(num1, num2));
+//       console.log("Subtraction:", calc.subtract(num1, num2));
+//       console.log("Multiply:", calc.Multiply(num1, num2));
+//       console.log("Dividation:", calc.Divide(num1, num2));
+
+//BLOCKING CODE
+// function blockCode() {
+//         for (let i =0; i < 1e10; i++){
+
+//         }
+
+//         console.log("Blocking code executed");
+//         }
+//         console.log("START");
+//         // Call the blocking function
+//         blockCode();
+//         console.log("END");
+
+//SET TIMEOUT
+// console.log("ONE");
+// console.log("TWO");
+// setTimeout(()=>{
+//         console.log("This is a delayed message.");
+
+// },4000);
+
+// console.log("THREE");
+// console.log("FOUR");
+
+
+//CALLBACK 
+// function sum (a,b){
+//         console.log(a+b);
+// }
+// function calculator (a,b,sumcallback){
+// sumcallback(a,b);
+// }
+// calculator(1,2,sum);
+
+let calculator = (a, b, sumcallback) => {
+   sumcallback(a, b);
+}
+
+calculator(1, 2, (a, b) => {
+   console.log(a + b);
+})
+
+let multiplication = (c,d, mulcallback) =>{
+        mulcallback(c,d);
+}
+
+multiplication (3,2,(c,d) =>{
+console.log(c*d);
+})
+
+var sub = (e,f,subcallback) =>{
+subcallback (e,f);
+}
+sub(5,2,(e,f)=>{
+        console.log(e-f);
+})
+
+
+//CallBAck with array operations
+// function processArray (arr, callback){
+//         let processed = arr.map(num => num *2);
+//         callback(processed);
+// }
+
+// function displayArray(arr){
+//         console.log("Processed Array:", arr);
+
+// }
+// processArray([1,2,3,4],displayArray)
+
+let processArray = (arr, callback) =>{
+        let processed = arr.map(num => num*2)
+        callback(processed);
+}
+let displayArray = (arr)=>{
+        console.log("Processed Array:", arr);
+}
+ processArray([1,2,3,4],displayArray)
+
+
+ // CALLBACK WITH CONDITIONS
+//  let login = (username , password , successcallback , errorcallback) =>{
+//         if (username === "admin" &&password === "123"){
+//                 successcallback("Login Successful");
+//         }else{
+//                 errorcallback("Login Failed");
+//         }
+//  }
+
+//  login(
+//         "admin",
+//         "123",
+// (msg) => console.log("Success:", msg),
+// (msg) => console.log("Error:", msg) 
+// );
+
+
+//GPA REPEAT 
+
+ const calculateGPA = (grades, callback) =>{
+        const gpa = grades.reduce((acc, val) => acc + val, 0) / grades.length;
+        callback(gpa.toFixed(2));
+      }
+      
+      calculateGPA([3.5, 4.0, 3.0], (gpa) => {
+        console.log("GPA is:", gpa);
+      });
+      
+
+      //Call BAck Hell
+
+
+//       let getdata = (dataId,getnextdata) =>{
+//         setTimeout (()=>{
+//                 console.log("Data Fetched", dataId);
+//         getnextdata();
+//         } , 3000);
+
+//       }
+
+//       getdata(1, () => {
+// console.log("Data 2 is loading");
+// getdata(2, ()=>{
+//         console.log("Data 3 is loading");
+// getdata(3, ()=> {
+//         console.log("Data 4 is loading");
+//         getdata(4, () => {
+//         });
+//       });
+//     });
+//   });
+
+  
+//Simulated API CALLS
+
+
+let getUser1 = (callback1) =>{
+        setTimeout(()=>{
+                console.log("Fetched User");
+                callback1({id:1,name:"Shubhayu"});
+        },2000)
+};
+
+let getPosts = (user2,callback2)=>{
+        setTimeout(()=>{
+                console.log(`Fetched Data From Post ${user2.name}`)
+        callback2(["Post 1, Post 2"]);
+        },3000);
+};
+
+let getComments = (post3,callback3) =>{
+        setTimeout(()=>{
+console.log(`Fetched Data from Comments ${post3}`)
+callback3("Sunny Leone Here & Jai lekho na kano ekhane niche mal na thakle kichu cholbe na jene nao just nicher take COMMENT OUT KORO R MOJA DEKHO ");
+        },3500)
+};
+
+getUser1((user2)=>{
+        console.log("I am getting data from User which is fetched data from user")
+        getPosts(user2,(post3)=>{
+                console.log("I am getting data from Post Route which is Fetched data from Shubhayu")
+                getComments(post3,(comments)=>{
+                        console.log("FINAL OUTPUT", comments);
+                })
+        })
+})

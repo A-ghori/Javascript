@@ -748,17 +748,17 @@ let displayArray = (arr)=>{
 
 //GPA REPEAT 
 
- const calculateGPA = (grades, callback) =>{
-        const gpa = grades.reduce((acc, val) => acc + val, 0) / grades.length;
-        callback(gpa.toFixed(2));
-      }
+//  const calculateGPA = (grades, callback) =>{
+//         const gpa = grades.reduce((acc, val) => acc + val, 0) / grades.length;
+//         callback(gpa.toFixed(2));
+//       }
       
-      calculateGPA([3.5, 4.0, 3.0], (gpa) => {
-        console.log("GPA is:", gpa);
-      });
+//       calculateGPA([3.5, 4.0, 3.0], (gpa) => {
+//         console.log("GPA is:", gpa);
+//       });
       
 
-      //Call BAck Hell
+//       //Call BAck Hell
 
 
 //       let getdata = (dataId,getnextdata) =>{
@@ -785,33 +785,129 @@ let displayArray = (arr)=>{
 //Simulated API CALLS
 
 
-let getUser1 = (callback1) =>{
+// let getUser1 = (callback1) =>{
+//         setTimeout(()=>{
+//                 console.log("Fetched User");
+//                 callback1({id:1,name:"Shubhayu"});
+//         },2000)
+// };
+
+// let getPosts = (user2,callback2)=>{
+//         setTimeout(()=>{
+//                 console.log(`Fetched Data From Post ${user2.name}`)
+//         callback2(["Post 1, Post 2"]);
+//         },3000);
+// };
+
+// let getComments = (post3,callback3) =>{
+//         setTimeout(()=>{
+// console.log(`Fetched Data from Comments ${post3}`)
+// callback3("Sunny Leone Here & Jai lekho na kano ekhane niche mal na thakle kichu cholbe na jene nao just nicher take COMMENT OUT KORO R MOJA DEKHO ");
+//         },3500)
+// };
+// //CALLBACK HELL 
+// getUser1((user2)=>{
+//         console.log("I am getting data from User which is fetched data from user")
+//         getPosts(user2,(post3)=>{
+//                 console.log("I am getting data from Post Route which is Fetched data from Shubhayu")
+//                 getComments(post3,(comments)=>{
+//                         console.log("FINAL OUTPUT", comments);
+//                 })
+//         })
+// })
+
+//Math Operations 
+let add = (a,b,callback) => {
         setTimeout(()=>{
-                console.log("Fetched User");
-                callback1({id:1,name:"Shubhayu"});
-        },2000)
+                let result = a+b;
+        console.log("Addition:",result);
+callback(result);
+},1500)
+}
+
+let square = (n,callback)=>{
+setTimeout(()=>{
+        let result = n*n;
+        console.log("Square:",result);
+        callback(result);
+},1500);
 };
 
-let getPosts = (user2,callback2)=>{
+let half = (m,callback)=>{
         setTimeout(()=>{
-                console.log(`Fetched Data From Post ${user2.name}`)
-        callback2(["Post 1, Post 2"]);
-        },3000);
+                let result = m/2;
+                console.log("Half:",result);
+                callback(result);
+        },1500);
 };
 
-let getComments = (post3,callback3) =>{
-        setTimeout(()=>{
-console.log(`Fetched Data from Comments ${post3}`)
-callback3("Sunny Leone Here & Jai lekho na kano ekhane niche mal na thakle kichu cholbe na jene nao just nicher take COMMENT OUT KORO R MOJA DEKHO ");
-        },3500)
-};
-
-getUser1((user2)=>{
-        console.log("I am getting data from User which is fetched data from user")
-        getPosts(user2,(post3)=>{
-                console.log("I am getting data from Post Route which is Fetched data from Shubhayu")
-                getComments(post3,(comments)=>{
-                        console.log("FINAL OUTPUT", comments);
-                })
+add(5,10,(sum)=>{
+square(sum,(squared)=>{
+        half(squared,(finalResult)=>{
+                console.log("Final Result:", finalResult)
         })
 })
+})
+
+
+//PROMISES
+
+// let promise = new Promise ((resolve,reject)=>{
+// console.log("Promise from Shubhayu")
+
+// reject("Promise Rejeted");
+// })
+
+const age = prompt ("Enter your Suitable NUMBER:"); // This returns a STRING like "18"
+
+let checkAge = (age) => {
+        return new Promise((resolve,reject)=>{
+                if (isNaN(age)){
+                        reject ("Please enter a valid number");
+                }else if (age <18){
+                        resolve ('You are a Minor ');
+
+                } else {
+                        resolve ('You are an Adult');
+                }
+        })
+}
+const numAge = Number(age);  // Number Converts "18" → 18 (number)
+checkAge (numAge)   // it will return  the actual number what number you input in prompt (string )
+.then(msg => console.log(msg))
+.catch(err => console.log(err));
+
+//EVEN ODD 
+const userInput = prompt ("Enter a number");
+
+let checkEvenOdd = (number) => {
+return new Promise ((resolve,reject) => {
+if (isNaN (number)) {
+        reject ("What are you doing bro");
+}
+else if (number % 2 === 0){
+        resolve ("Even Number.");
+} else {
+        resolve ("Odd Number.");
+}
+}
+)}
+
+let ABC = Number(userInput);
+checkEvenOdd(ABC)
+.then(msg => console.log(msg))
+.catch(err => console.log (err));
+
+// let getData = (dataId, getNextData) => {
+//         return new Promise = (resolve,reject) => {
+// setTimeout(() => {
+//         console.log("Data Fetched", dataId);
+//         resolve("Solved");
+//         if (getNextData){
+//                 getNextData();
+//         }
+// },2000)
+//         }
+// }
+
+

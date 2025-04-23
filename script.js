@@ -683,28 +683,28 @@
 // }
 // calculator(1,2,sum);
 
-let calculator = (a, b, sumcallback) => {
-   sumcallback(a, b);
-}
+// let calculator = (a, b, sumcallback) => {
+//    sumcallback(a, b);
+// }
 
-calculator(1, 2, (a, b) => {
-   console.log(a + b);
-})
+// calculator(1, 2, (a, b) => {
+//    console.log(a + b);
+// })
 
-let multiplication = (c,d, mulcallback) =>{
-        mulcallback(c,d);
-}
+// let multiplication = (c,d, mulcallback) =>{
+//         mulcallback(c,d);
+// }
 
-multiplication (3,2,(c,d) =>{
-console.log(c*d);
-})
+// multiplication (3,2,(c,d) =>{
+// console.log(c*d);
+// })
 
-var sub = (e,f,subcallback) =>{
-subcallback (e,f);
-}
-sub(5,2,(e,f)=>{
-        console.log(e-f);
-})
+// var sub = (e,f,subcallback) =>{
+// subcallback (e,f);
+// }
+// sub(5,2,(e,f)=>{
+//         console.log(e-f);
+// })
 
 
 //CallBAck with array operations
@@ -719,14 +719,14 @@ sub(5,2,(e,f)=>{
 // }
 // processArray([1,2,3,4],displayArray)
 
-let processArray = (arr, callback) =>{
-        let processed = arr.map(num => num*2)
-        callback(processed);
-}
-let displayArray = (arr)=>{
-        console.log("Processed Array:", arr);
-}
- processArray([1,2,3,4],displayArray)
+// let processArray = (arr, callback) =>{
+//         let processed = arr.map(num => num*2)
+//         callback(processed);
+// }
+// let displayArray = (arr)=>{
+//         console.log("Processed Array:", arr);
+// }
+//  processArray([1,2,3,4],displayArray)
 
 
  // CALLBACK WITH CONDITIONS
@@ -817,37 +817,37 @@ let displayArray = (arr)=>{
 // })
 
 //Math Operations 
-let add = (a,b,callback) => {
-        setTimeout(()=>{
-                let result = a+b;
-        console.log("Addition:",result);
-callback(result);
-},1500)
-}
+// let add = (a,b,callback) => {
+//         setTimeout(()=>{
+//                 let result = a+b;
+//         console.log("Addition:",result);
+// callback(result);
+// },1500)
+// }
 
-let square = (n,callback)=>{
-setTimeout(()=>{
-        let result = n*n;
-        console.log("Square:",result);
-        callback(result);
-},1500);
-};
+// let square = (n,callback)=>{
+// setTimeout(()=>{
+//         let result = n*n;
+//         console.log("Square:",result);
+//         callback(result);
+// },1500);
+// };
 
-let half = (m,callback)=>{
-        setTimeout(()=>{
-                let result = m/2;
-                console.log("Half:",result);
-                callback(result);
-        },1500);
-};
+// let half = (m,callback)=>{
+//         setTimeout(()=>{
+//                 let result = m/2;
+//                 console.log("Half:",result);
+//                 callback(result);
+//         },1500);
+// };
 
-add(5,10,(sum)=>{
-square(sum,(squared)=>{
-        half(squared,(finalResult)=>{
-                console.log("Final Result:", finalResult)
-        })
-})
-})
+// add(5,10,(sum)=>{
+// square(sum,(squared)=>{
+//         half(squared,(finalResult)=>{
+//                 console.log("Final Result:", finalResult)
+//         })
+// })
+// })
 
 
 //PROMISES
@@ -858,45 +858,45 @@ square(sum,(squared)=>{
 // reject("Promise Rejeted");
 // })
 
-const age = prompt ("Enter your Suitable NUMBER:"); // This returns a STRING like "18"
+// const age = prompt ("Enter your Suitable NUMBER:"); // This returns a STRING like "18"
 
-let checkAge = (age) => {
-        return new Promise((resolve,reject)=>{
-                if (isNaN(age)){
-                        reject ("Please enter a valid number");
-                }else if (age <18){
-                        resolve ('You are a Minor ');
+// let checkAge = (age) => {
+//         return new Promise((resolve,reject)=>{
+//                 if (isNaN(age)){
+//                         reject ("Please enter a valid number");
+//                 }else if (age <18){
+//                         resolve ('You are a Minor ');
 
-                } else {
-                        resolve ('You are an Adult');
-                }
-        })
-}
-const numAge = Number(age);  // Number Converts "18" → 18 (number)
-checkAge (numAge)   // it will return  the actual number what number you input in prompt (string )
-.then(msg => console.log(msg))
-.catch(err => console.log(err));
+//                 } else {
+//                         resolve ('You are an Adult');
+//                 }
+//         })
+// }
+// const numAge = Number(age);  // Number Converts "18" → 18 (number)
+// checkAge (numAge)   // it will return  the actual number what number you input in prompt (string )
+// .then(msg => console.log(msg))
+// .catch(err => console.log(err));
 
 //EVEN ODD 
-const userInput = prompt ("Enter a number");
+// const userInput = prompt ("Enter a number");
 
-let checkEvenOdd = (number) => {
-return new Promise ((resolve,reject) => {
-if (isNaN (number)) {
-        reject ("What are you doing bro");
-}
-else if (number % 2 === 0){
-        resolve ("Even Number.");
-} else {
-        resolve ("Odd Number.");
-}
-}
-)}
+// let checkEvenOdd = (number) => {
+// return new Promise ((resolve,reject) => {
+// if (isNaN (number)) {
+//         reject ("What are you doing bro");
+// }
+// else if (number % 2 === 0){
+//         resolve ("Even Number.");
+// } else {
+//         resolve ("Odd Number.");
+// }
+// }
+// )}
 
-let ABC = Number(userInput);
-checkEvenOdd(ABC)
-.then(msg => console.log(msg))
-.catch(err => console.log (err));
+// let ABC = Number(userInput);
+// checkEvenOdd(ABC)
+// .then(msg => console.log(msg))
+// .catch(err => console.log (err));
 
 // let getData = (dataId, getNextData) => {
 //         return new Promise = (resolve,reject) => {
@@ -910,4 +910,245 @@ checkEvenOdd(ABC)
 //         }
 // }
 
+// PROMISE CHAIN
 
+// let asyncFunction = () =>{
+//         return new Promise((resolve , reject) =>{
+//        setTimeout(() => {
+//         console.log("Some Data1");
+//         resolve("Success 1");
+//        },4000);
+//         });
+// }
+// let asyncFunction2 = () =>{
+//         return new Promise((resolve , reject) =>{
+//        setTimeout(() => {
+//         console.log("Some Data 2");
+//         resolve("Success 2");
+//        },4000);
+//         });
+// }
+
+//  console.log("Fetching Data 1");
+//  let p1 = asyncFunction();
+//  p1.then (msg => {
+//         console.log("Message:",msg)
+//  });
+
+//  console.log("Fetching Data 2");
+//  let p2 = asyncFunction2();
+//  p2.then (msg2 => {
+//         console.log("Message:",msg2)
+//  });
+
+// let asyncFunction = () =>{
+//                 return new Promise((resolve , reject) =>{
+//                setTimeout(() => {
+//                 console.log("Some Data1");
+//                 resolve("Success 1");
+//                },4000);
+//                 });
+//         }
+
+//         let asyncFunction2 = () =>{
+//         return new Promise((resolve , reject) =>{
+//        setTimeout(() => {
+//         console.log("Some Data 2");
+//         resolve("Success 2");
+//        },4000);
+//         });
+// }
+
+// // console.log("Fetching Data 1");
+
+// // let p1 = asyncFunction();
+// // p1.then((msg)=>{
+// //         console.log("Message:",msg)
+// //         console.log("Fetching Data 2");
+// //         let p2 = asyncFunction2();
+// //         p2.then((msg2)=>{
+// //                 console.log("Message:",msg2)
+// //         })
+
+// // })
+
+// asyncFunction().then((msg)=>{
+//         console.log("Message:",msg)
+//         console.log("Fetching Data 2");
+//         asyncFunction2().then((msg2)=>{
+//                 console.log("Message:",msg2)
+     
+//         })
+// })
+
+
+
+// Simulated API CALLS via Promises Chain
+
+
+// let getUser1 = () =>{
+//         return new Promise((resolve,reject)=>{
+//                 setTimeout(()=>{
+//                         console.log("Fetched User");
+//                         resolve({id:1, name:"Shubhayu Barua"});
+//                 },3000);
+//         })
+       
+// };
+
+// let getPosts = (user2)=>{
+//         return new Promise((resolve,reject)=>{
+//                 setTimeout(()=>{
+//                         console.log(`Fetched Data from Post ${user2.name}`)
+//                         resolve(["Post 1, Post 2"]);
+//                 })
+//         },3000);
+           
+//         };
+        
+//         let getComments = (post3) =>{
+//                 return new Promise ((resolve,reject)=>{
+//                         setTimeout(()=>{
+//                                 console.log(`Fetched Data from Comments ${post3}`)
+//                                 resolve("Sunny Leone Here & Jai lekho na kano ekhane niche mal na thakle kichu cholbe na jene nao just nicher take COMMENT OUT KORO R MOJA DEKHO ");
+//                                         },3500)
+//                 })
+                
+//         };
+//         //Promise Chain 
+//         getUser1().then((msg)=>{
+//                 console.log("I am getting data from User which is fetched data from user",msg);
+//                 getPosts(msg).then((post3)=>{
+//                         console.log("I am getting data from Post Route which is Fetched data from Shubhayu",post3);
+//                         getComments(post3).then((comments)=>{
+//                                 console.log("FINAL OUTPUT", comments);
+//                         })
+//                 })
+//         })
+        
+
+// Online Order Flow
+
+
+// let orderDetails = {
+//         item: 'Laptop',
+//         adress: '123 Main St',
+//         payment: 'Credit Card'
+// }
+
+//  let placeOrder =  (order)=>{
+      
+//         return new Promise ((resolve,reject)=>{
+//                 if(order){
+//                         console.log("Oder Placed");
+//                         resolve(order)
+//                 } else{
+//                         reject ('Order Failed or No order found');
+//                 }
+//         })
+//  }
+
+//  let proccessPayment = (order)=>{
+//         return new Promise ((resolve,reject)=>{
+//                 setTimeout(()=>{
+//                         console.log("Payment Succeful for:",order.item);
+//                         resolve(order);
+//                 },1500);
+//         })
+//  }
+
+//  let ShipOrder = (order)=>{
+//         return new Promise ((resolve,reject)=>{
+//                 setTimeout(()=>{
+//                         console.log(`Order Shipped to: ${order.adress}`);
+//                 resolve("Order Shipped");
+//                 },1500);
+//         });
+
+//         };
+//         placeOrder(orderDetails)
+//         .then(proccessPayment)
+//         .then(ShipOrder)
+//         .then((msg) => {
+//                 console.log("✅",msg);
+//         })
+//         .catch((err)=>console.log("❌",err));
+
+
+// Shopping ENcryption 
+
+let shoppingCart = [
+        {item: 'Laptop', price: 1000},
+        {item: 'TV', price: 2000},
+        {item: 'Washing Machine', price: 3000},
+        {item: 'Water Bottle', price: 4000},
+        {item: 'Redmi ', price: 5000},
+        {item: 'Samsung', price: 6000},
+        {item: 'Iphone', price: 7000},
+
+];
+let paymentDetails = {
+        cardNumber: '1234-5678-9012-3456',
+        expiryDate: '12/25',
+        cvv: '123',
+}
+
+let ShippingAddress = {
+        name: 'Shubhayu Barua',
+        address: '123 Main St, City, Country',
+        phone: '123-456-7890',
+}
+
+let placeOrder = () => {
+        let order = prompt("Enter Your Order");
+        return new Promise((resolve, reject)=>{
+                let seletedItem ={ ...shoppingCart.find(i => i.item === order)};
+                if (seletedItem) {
+                        console.log("Item is available",seletedItem.item);
+                        resolve((seletedItem));
+                } 
+                else{
+                        reject("please input right item");
+                }
+        })
+}
+
+let proccessPayment = (order) => {
+return new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+                console.log("Payment Successful for:",order.item, `($${order.price})`);
+                console.log("Payment Method: Credit Card");
+                console.log("Payment Details:", paymentDetails);
+                resolve(order);
+
+        },1500);
+}
+        )
+
+
+}
+
+let ShipOrder = (order) => {
+return new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+                console.log(`🚚 Order for ${order.item} Order Shipped to: ${ShippingAddress.address}`);
+                console.log("Shipping Address:", ShippingAddress);
+                resolve("Order Shipped");
+        },1500);
+}
+        )
+}
+
+
+placeOrder()
+.then(proccessPayment)
+.then(ShipOrder)
+.then((msg) => {
+        console.log("✅",msg);
+})
+.catch((err)=>console.log("❌",err));
+
+let newArray = originalArray.map((element, index, array) => {
+        // return something new here
+      });
+      

@@ -1077,78 +1077,163 @@
 
 // Shopping ENcryption 
 
-let shoppingCart = [
-        {item: 'Laptop', price: 1000},
-        {item: 'TV', price: 2000},
-        {item: 'Washing Machine', price: 3000},
-        {item: 'Water Bottle', price: 4000},
-        {item: 'Redmi ', price: 5000},
-        {item: 'Samsung', price: 6000},
-        {item: 'Iphone', price: 7000},
+// let shoppingCart = [
+//         {item: 'Laptop', price: 1000},
+//         {item: 'TV', price: 2000},
+//         {item: 'Washing Machine', price: 3000},
+//         {item: 'Water Bottle', price: 4000},
+//         {item: 'Redmi ', price: 5000},
+//         {item: 'Samsung', price: 6000},
+//         {item: 'Iphone', price: 7000},
 
-];
-let paymentDetails = {
-        cardNumber: '1234-5678-9012-3456',
-        expiryDate: '12/25',
-        cvv: '123',
-}
+// ];
+// let paymentDetails = {
+//         cardNumber: '1234-5678-9012-3456',
+//         expiryDate: '12/25',
+//         cvv: '123',
+// }
 
-let ShippingAddress = {
-        name: 'Shubhayu Barua',
-        address: '123 Main St, City, Country',
-        phone: '123-456-7890',
-}
+// let ShippingAddress = {
+//         name: 'Shubhayu Barua',
+//         address: '123 Main St, City, Country',
+//         phone: '123-456-7890',
+// }
 
-let placeOrder = () => {
-        let order = prompt("Enter Your Order");
-        return new Promise((resolve, reject)=>{
-                let seletedItem ={ ...shoppingCart.find(i => i.item === order)};
-                if (seletedItem) {
-                        console.log("Item is available",seletedItem.item);
-                        resolve((seletedItem));
-                } 
-                else{
-                        reject("please input right item");
-                }
-        })
-}
+// let placeOrder = () => {
+//         let order = prompt("Enter Your Order");
+//         return new Promise((resolve, reject)=>{
+//                 let seletedItem ={ ...shoppingCart.find(i => i.item === order)};
+//                 if (seletedItem) {
+//                         console.log("Item is available",seletedItem.item);
+//                         resolve((seletedItem));
+//                 } 
+//                 else{
+//                         reject("please input right item");
+//                 }
+//         })
+// }
 
-let proccessPayment = (order) => {
-return new Promise ((resolve, reject)=>{
-        setTimeout(()=>{
-                console.log("Payment Successful for:",order.item, `($${order.price})`);
-                console.log("Payment Method: Credit Card");
-                console.log("Payment Details:", paymentDetails);
-                resolve(order);
+// let proccessPayment = (order) => {
+// return new Promise ((resolve, reject)=>{
+//         setTimeout(()=>{
+//                 console.log("Payment Successful for:",order.item, `($${order.price})`);
+//                 console.log("Payment Method: Credit Card");
+//                 console.log("Payment Details:", paymentDetails);
+//                 resolve(order);
 
-        },1500);
-}
-        )
-
-
-}
-
-let ShipOrder = (order) => {
-return new Promise ((resolve, reject)=>{
-        setTimeout(()=>{
-                console.log(`🚚 Order for ${order.item} Order Shipped to: ${ShippingAddress.address}`);
-                console.log("Shipping Address:", ShippingAddress);
-                resolve("Order Shipped");
-        },1500);
-}
-        )
-}
+//         },1500);
+// }
+//         )
 
 
-placeOrder()
-.then(proccessPayment)
-.then(ShipOrder)
-.then((msg) => {
-        console.log("✅",msg);
-})
-.catch((err)=>console.log("❌",err));
+// }
 
-let newArray = originalArray.map((element, index, array) => {
-        // return something new here
-      });
+// let ShipOrder = (order) => {
+// return new Promise ((resolve, reject)=>{
+//         setTimeout(()=>{
+//                 console.log(`🚚 Order for ${order.item} Order Shipped to: ${ShippingAddress.address}`);
+//                 console.log("Shipping Address:", ShippingAddress);
+//                 resolve("Order Shipped");
+//         },1500);
+// }
+//         )
+// }
+
+
+// placeOrder()
+// .then(proccessPayment)
+// .then(ShipOrder)
+// .then((msg) => {
+//         console.log("✅",msg);
+// })
+// .catch((err)=>console.log("❌",err));
+
+// let newArray = originalArray.map((element, index, array) => {
+//         // return something new here
+//       });
       
+
+      // Async Await
+//       let  getData = ()=>{
+//         return new Promise((resolve, reject) => {
+//                 setTimeout(() => {
+//                    console.log("Async Function Executed");    
+//                    resolve("Data Fetched"); 
+//                 }, 2500);
+//         })
+//       }
+// // async function getAllData(){
+// //         await getData (1);
+// //         await getData (2);
+// //         await getData (3);
+// //         await getData (4);
+// //         await getData (5);
+// // }
+// // getData();
+
+// (async () => {
+//         console.log("HEllo Shubhayu")
+//         await getData (1);
+//         console.log("Data 1 Fetched")
+//         await getData (2);
+//         console.log("Data 2 Fetched")
+//         await getData (3);
+//         console.log("Data 3 Fetched")
+//         await getData (4);
+//         console.log("Data 4 Fetched")
+// }) ();
+
+
+// PROTO TYPE CHAIN MODERN WAYS TO EXECUTRE PROto TYPE CHAIN IS DECLARE CLASS Object.setPrototypeOf or classes:
+let animal = {
+        eats: true
+      };
+      
+      let rabbit = {
+        jumps: true
+      };
+      
+      // Link rabbit to animal
+      rabbit.__proto__ = animal;
+//       Object.setPrototypeOf(rabbit, animal);
+
+      
+      console.log(rabbit.jumps); // true (own property)
+      console.log(rabbit.eats);  // true (inherited from animal)
+      
+
+      // CLASS
+      // A class is just a blueprint to create objects easily.
+// Instead of writing an object again and again, we create a class and then make many objects from it.
+      class Animal {
+        constructor(name) {
+          this.name = name;
+        }
+      
+        speak() {
+          console.log(`${this.name} makes a noise.`);
+        }
+      }
+      
+      // Making an object:
+      let dog = new Animal("Dog");
+      dog.speak();  // Dog makes a noise.
+      
+
+      class Animal1 {
+        constructor(name){
+                this.name = name;
+        }
+        speak(){
+                console.log(`${this.name}makes a noise`);
+        }
+      }
+      class Dog extends Animal1{
+        bark() {
+                console.log(`${this.name} barks`);
+        }
+      }
+
+      let dog1 = new Dog("Rocky");
+      dog1.speak(); // Rocky makes a noise.
+        dog1.bark();  // Rocky barks.
